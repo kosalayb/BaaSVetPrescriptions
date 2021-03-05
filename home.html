@@ -1,0 +1,65 @@
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" >
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <title> ePrescriptions in Ireland </title>
+  </head>
+  <br></br>
+  <h1 style="text-align:center"> e-Prescriptions on Blockchain </h1>
+
+
+  <body>
+
+   <br>
+
+
+   <div class="container  table-responsive">
+      <table class=" table table-striped d-flex align-items-center justify-content-center" style="height: 350px">
+        <thead></thead>
+        <tbody>
+          <br>
+
+          <tr align="left">
+            <td> Farmer as a Service</td>
+            <td><button class="btn btn-primary" onClick="window.open('http://localhost:3000/freg');">Farmer Registration</button></td>
+            <td><button class="btn btn-primary" style="background-color:Green" onClick="window.open('http://localhost:3000/farmerAS/remUsage');">Remedies Usage Records</button></td>
+            <td><button class="btn btn-primary" onClick="window.open('http://localhost:3000/');">View Purchased Remedies</button></td>
+          </tr>
+
+          <tr align="left">
+            <td> Med Supplier as a Service</td> 
+            <td><button class="btn btn-primary" onClick="window.open('http://localhost:3000/sreg');">Supplier Registration</button></td>
+            <td><button class="btn btn-primary" style="background-color:Green" onClick="window.open('http://localhost:3000/supplierAS/recDispenses');">Record Dispenses</button></td>
+          </tr>
+
+          <tr align="left">
+            <td> Vet as a Service</td>
+            <td><button class="btn btn-primary" style="background-color:Green" onClick="window.open('http://localhost:3000/vetAS/vreg');">Veterinarian Registration</button></td>              
+            <td><button class="btn btn-primary" style="background-color:Green" onClick="window.open('http://localhost:3000/vetAS/addPrescription');">Add Prescription</button></td>
+            <td><button class="btn btn-primary" style="background-color:Green" onClick="window.open('http://localhost:3000/supplierAS/recDispenses');">Record Dispenses</button></td>
+            <td><button class="btn btn-primary" style="background-color:Green" onClick="window.open('http://localhost:3000/vetAS/vpres');">View Prescriptions</button></td>
+          </tr>
+
+          <tr align="left">
+            <td> Trust as a Service</td>
+            <td><button class="btn btn-primary"  style="background-color:Green" onClick="window.open('http://localhost:3000/trustAS/trcal');">Record Trustworthiness</button></td>
+            <td><button class="btn btn-primary"  style="background-color:Green" onClick="window.open('http://localhost:3000/trustAS/vtrust');"> View Trustworthiness</button></td>
+          </tr>
+
+          <tr align="left">
+            <td> Traceability as a Service</td>
+            <td><button class="btn btn-primary" onClick="window.open('http://localhost:3000/ttreatments');">Trace Treatments</button></td>
+            <td><button class="btn btn-primary" onClick="window.open('http://localhost:3000/trustEvolution');">Trust Evolution</button></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </body>
+
+  </html>

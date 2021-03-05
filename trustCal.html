@@ -1,0 +1,56 @@
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <script type="text/javascript" src="/server.js"></script>
+    <script src="/trustCal.js"></script>
+    <title> Trustworthiness Calculator</title>
+  </head>
+
+  <body>
+
+    <br></br>
+    <H2 style="text-align:center"> Calculate Trustworthiness Record on Blockchain </H2>
+    <br></br>
+    <br></br>
+
+
+
+    <form id="vetData">
+
+        <div class="form-group row">
+          <label class="col-sm-1 control-label" for="_Kgs"></label>
+          <div class="col-sm-10">
+              <input type="text" id="_FarmerID" class="form-control" placeholder="Enter Farmer ID"></input>
+              <input type="text" id="_Date" class="form-control" placeholder="Enter Date"></input>
+              <input type="text" id="_TAC1" class="form-control" placeholder="TAC1: Enter Percentage"></input>
+              <input type="text" id="_TAC2" class="form-control" placeholder="TAC2: Enter Percentage"></input>
+              <input type="text" id="_TAC3" class="form-control" placeholder="TAC3: Enter Percentage"></input>
+              <input type="text" id="_TAC4" class="form-control" placeholder="TAC4: Enter Percentage"></input>
+              <input type="text" id="_TAC5" class="form-control" placeholder="TAC5: Enter Percentage"></input>
+              <input type="text" id="_TAC6" class="form-control" placeholder="TAC6: Enter Percentage"></input>
+              <input type="text" id="_TAC7" class="form-control" placeholder="TAC7: Enter Percentage"></input>
+
+              <br>
+              <br>
+
+              <button type="button" id="TrustCalc"  class="btn btn-primary">Calulate and Record on Blockchain</button>
+              <button type="button" id="clearRecords"  class="btn btn-primary">Clear</button>
+
+           </div>
+        </div>
+
+
+    </form>
+
+
+
+
+
+  </body>
+
+</html>

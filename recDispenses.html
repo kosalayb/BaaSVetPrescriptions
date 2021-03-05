@@ -1,0 +1,283 @@
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="/node_modules/web3/dist/web3.min.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <script type="text/javascript" src="/server.js"></script>
+    <script type="text/javascript" src="/recDispenses.js"></script>
+    <title> Supplier - Record Dispenses </title>
+  </head>
+
+
+    <br></br>
+    <h1 style="text-align:center"> Medicine Prescribed/Dispensered/Administered </h1>
+    <br></br>
+    <H6 style="text-align:center"> [Enter one of the following IDs] </H6>
+    <div class="text-center">
+        <input type="text" id="SerialNo" placeholder=" Enter Serial Number : "></input>
+        <input type="text" id="FarmerID" placeholder=" Enter Farmer ID : "></input>
+        <br></br>
+        <button id='viewDisp' type="button" class="btn btn-primary">View Records</button>
+    </div>
+    <br></br>
+
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-12">
+          <br></br>
+          <h4 style="text-align:right">Serial No : <input type="text" id="serialNo" ></input></h4>
+          <h3 style="text-align:center">VETERINARY IRELAND SAMPLE PRESCRIPTION PAD</h3>
+          <h4 style="text-align:center">This prescription is FOR ANIMAL TREATMENT ONLY</h4>
+            <br></br>
+
+            <form id="setData">
+
+              <div class="form-group row">
+                <label class="col-sm-1 control-label" for="grantedTo">1.Prescription Granted To: </label>
+                <div class="col-sm-10">
+                  <input type="text" id="grantedTo_name" class="form-control" placeholder=" Name: "></input>
+                  <input type="text" id="grantedTo_address" class="form-control" placeholder="Address: "></input>
+                </div>
+              </div>
+
+              <br></br>
+
+              <div class="form-group row">
+                <label class="col-sm-1 control-label" for="grantedTo">2.Validity: </label>
+                <div class="col-sm-10">
+                  <input type="text" id="validity" class="form-control" placeholder=" This Prescription is valid until:"></input>
+                </div>
+              </div>
+
+              <br></br>
+
+              <div class="form-group row">
+                <label class="col-sm-1 control-label" for="_Lc">3.1 Animal Remedy Prescribed:</label>
+                <div class="col-sm-10">
+                       <table id='caseTable' class="table">
+                          <thead class="thead-light">
+                            <tr>
+                              <th data-field="_f1" scope="col">Description or Identity of Animal(s)
+                                <input type="text" id="_I10" class="form-control"></input>
+                                <input type="text" id="_I11" class="form-control"></input>
+                                <input type="text" id="_I12" class="form-control"></input>
+                                <input type="text" id="_I13" class="form-control"></input>
+                                <input type="text" id="_I14" class="form-control"></input>
+                              </th>
+                              <th data-field="_f2" scope="col">Authorised Name of Animal Remedy(*1)
+                                <input type="text" id="_I20" class="form-control"></input>
+                                <input type="text" id="_I21" class="form-control"></input>
+                                <input type="text" id="_I22" class="form-control"></input>
+                                <input type="text" id="_I23" class="form-control"></input>
+                                <input type="text" id="_I24" class="form-control"></input>
+                              </th>
+                              <th data-field="_f3" scope="col">VPA Or  EU Number
+                                <input type="text" id="_I30" class="form-control"></input>
+                                <input type="text" id="_I31" class="form-control"></input>
+                                <input type="text" id="_I32" class="form-control"></input>
+                                <input type="text" id="_I33" class="form-control"></input>
+                                <input type="text" id="_I34" class="form-control"></input>
+                              </th>
+                              <th data-field="_f4" scope="col">Total quantity
+                                <input type="text" id="_I40" class="form-control"></input>
+                                <input type="text" id="_I41" class="form-control"></input>
+                                <input type="text" id="_I42" class="form-control"></input>
+                                <input type="text" id="_I43" class="form-control"></input>
+                                <input type="text" id="_I44" class="form-control"></input>
+                              </th>
+                              <th data-field="_f5" scope="col">Dose  Rate 
+                                <input type="text" id="_I50" class="form-control"></input>
+                                <input type="text" id="_I51" class="form-control"></input>
+                                <input type="text" id="_I52" class="form-control"></input>
+                                <input type="text" id="_I53" class="form-control"></input>
+                                <input type="text" id="_I54" class="form-control"></input>
+                              </th>
+                              <th data-field="_f6" scope="col">Frequency of treatment 
+                                <input type="text" id="_I60" class="form-control"></input>
+                                <input type="text" id="_I61" class="form-control"></input>
+                                <input type="text" id="_I62" class="form-control"></input>
+                                <input type="text" id="_I63" class="form-control"></input>
+                                <input type="text" id="_I64" class="form-control"></input>
+                              </th>
+                              <th data-field="_f7" scope="col">Manner/site of administering
+                                <input type="text" id="_I70" class="form-control"></input>
+                                <input type="text" id="_I71" class="form-control"></input>
+                                <input type="text" id="_I72" class="form-control"></input>
+                                <input type="text" id="_I73" class="form-control"></input>
+                                <input type="text" id="_I74" class="form-control"></input>
+                              </th>
+                              <th data-field="_f8" scope="col">Withdrawal Periods(*2) (Meat)
+                                <input type="text" id="_I80" class="form-control"></input>
+                                <input type="text" id="_I81" class="form-control"></input>
+                                <input type="text" id="_I82" class="form-control"></input>
+                                <input type="text" id="_I83" class="form-control"></input>
+                                <input type="text" id="_I84" class="form-control"></input>
+                              </th>
+                              <th data-field="_f9" scope="col">Withdrawal Periods(*2) (Milk)
+                                <input type="text" id="_I90" class="form-control"></input>
+                                <input type="text" id="_I91" class="form-control"></input>
+                                <input type="text" id="_I92" class="form-control"></input>
+                                <input type="text" id="_I93" class="form-control"></input>
+                                <input type="text" id="_I94" class="form-control"></input>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody >
+                          </tbody>
+                        </table>
+                 </div>
+              </div>
+
+              <br></br>
+
+              <div class="form-group row">
+                <label class="col-sm-1 control-label" for="_Lc">3.2 Animal Remedy Dispensed:</label>
+                <div class="col-sm-10">
+                       <table id='caseTable' class="table">
+                          <thead class="thead-light">
+                            <tr>
+                              <th data-field="_fd10" scope="col">Batch No. 
+                                <input type="text" id="_D10" class="form-control"></input>
+                                <input type="text" id="_D11" class="form-control"></input>
+                                <input type="text" id="_D12" class="form-control"></input>
+                                <input type="text" id="_D13" class="form-control"></input>
+                                <input type="text" id="_D14" class="form-control"></input>
+                              </th>
+                              <th data-field="_fd11" scope="col">Expiry Date:
+                                <input type="text" id="_D20" class="form-control"></input>
+                                <input type="text" id="_D21" class="form-control"></input>
+                                <input type="text" id="_D22" class="form-control"></input>
+                                <input type="text" id="_D23" class="form-control"></input>
+                                <input type="text" id="_D24" class="form-control"></input>
+                              </th>
+                              <th data-field="_fd12" scope="col">Quantity & Date 
+                                <input type="text" id="_D30" class="form-control"></input>
+                                <input type="text" id="_D31" class="form-control"></input>
+                                <input type="text" id="_D32" class="form-control"></input>
+                                <input type="text" id="_D33" class="form-control"></input>
+                                <input type="text" id="_D34" class="form-control"></input>
+                              </th>
+                              <th data-field="_fd13" scope="col">Dispenser Signature 
+                                <input type="text" id="_D40" class="form-control"></input>
+                                <input type="text" id="_D41" class="form-control"></input>
+                                <input type="text" id="_D42" class="form-control"></input>
+                                <input type="text" id="_D43" class="form-control"></input>
+                                <input type="text" id="_D44" class="form-control"></input>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody >
+                          </tbody>
+                        </table>
+                 </div>
+              </div>
+
+              <br></br>
+
+              <div class="form-group row">
+                <label class="col-sm-1 control-label" for="_Lc">3.3 Animal Remedy Administered:</label>
+                <div class="col-sm-10">
+                       <table id='caseTable' class="table">
+                          <thead class="thead-light">
+                            <tr>
+                              <th data-field="_fa10" scope="col">Batch No. 
+                                <input type="text" id="_A10" class="form-control"></input>
+                                <input type="text" id="_A11" class="form-control"></input>
+                                <input type="text" id="_A12" class="form-control"></input>
+                                <input type="text" id="_A13" class="form-control"></input>
+                                <input type="text" id="_A14" class="form-control"></input>
+                              </th>
+                              <th data-field="_fa11" scope="col">Expiry Date:
+                                <input type="text" id="_A20" class="form-control"></input>
+                                <input type="text" id="_A21" class="form-control"></input>
+                                <input type="text" id="_A22" class="form-control"></input>
+                                <input type="text" id="_A23" class="form-control"></input>
+                                <input type="text" id="_A24" class="form-control"></input>
+                              </th>
+                              <th data-field="_fa12" scope="col">Quantity & Date 
+                                <input type="text" id="_A30" class="form-control"></input>
+                                <input type="text" id="_A31" class="form-control"></input>
+                                <input type="text" id="_A32" class="form-control"></input>
+                                <input type="text" id="_A33" class="form-control"></input>
+                                <input type="text" id="_A34" class="form-control"></input>
+                              </th>
+                              <th data-field="_fa13" scope="col">Administer Signature 
+                                <input type="text" id="_A40" class="form-control"></input>
+                                <input type="text" id="_A41" class="form-control"></input>
+                                <input type="text" id="_A42" class="form-control"></input>
+                                <input type="text" id="_A43" class="form-control"></input>
+                                <input type="text" id="_A44" class="form-control"></input>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody >
+                          </tbody>
+                        </table>
+                 </div>
+              </div>
+
+              <br></br>
+
+              <div class="form-group row">
+                <label class="col-sm-1 control-label" for="_DIM">4.Special Instructions, Precautions, Risks </label>
+                <div class="col-sm-10">
+                    <input label="Special Instructions" type="text" id="special_instructions" class="form-control" ></input>
+                 </div>
+              </div>
+
+              <br></br>
+
+              <div class="form-group row">
+                <label class="col-sm-1 control-label" for="_Kgs">5.Prescribing Veterinarian: </label>
+                <div class="col-sm-10">
+                    <input type="text" id="_v1ID" class="form-control" placeholder="Veterinarian ID"></input>
+                    <input type="text" id="_v1" class="form-control" placeholder="Name (Block Capitals)"></input>
+                    <input type="text" id="_v2" class="form-control" placeholder="Practice name (Block Capitals"></input>
+                    <input type="text" id="_v3" class="form-control" placeholder="Address (Block Capitals)"></input>
+                    <input type="text" id="_v4" class="form-control" placeholder="Contact details including EMERGENCY TEL. NO."></input>
+                    <input type="text" id="_v5" class="form-control" placeholder="Signature"></input>
+                    <input type="text" id="_v6" class="form-control" placeholder="Date"></input>
+                 </div>
+              </div>
+
+            
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <button type="button" id="addRecords"  class="btn btn-primary">Submit</button>
+                  <button type="button" id="clearRecords"  class="btn btn-primary">Clear</button>
+                </div>
+              </div>
+
+            </form>
+
+        </div>
+
+        <div> 
+          <label>*1. If there is more than one authorised animal remedy suitable for treatment of the condition to which it applies, specify at least TWO alternative animal remedies - as per Regulation 45(5) </label>
+        </div>
+        <div> 
+          <label> *2. Animals must not be slaughtered until AFTER the withholding period has expired - as per Regulation 41.  </label>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+  <body>
+
+
+
+  </body>
+
+
+
+
+
+</html>
