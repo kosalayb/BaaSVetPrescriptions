@@ -1,6 +1,6 @@
 // app.js
 //TODO:can deploy smart contracts to Ethereum testnet or mainnet using INFURA
-//TODO: add tests
+
 
 const express = require('express');
 const IPFS = require('ipfs-api');
