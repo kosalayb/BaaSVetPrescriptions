@@ -17,11 +17,5 @@ contract TestePrescription{
         Assert.equal(epres.getRegisteredVet("vet111"),"aaaa","return valid vet hash");
     }
 
-
-    function testAddMapFail() public{
-        epres.addRegisteredVet("vet222","bbbb");
-        Assert.equal(epres.getRegisteredVet("vet222"),"aaaa","return valid vet hash");
-    }
-    
     
 }
