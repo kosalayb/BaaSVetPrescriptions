@@ -7,6 +7,7 @@ contract ePrescription {
     mapping(string=>string) public trustW; //farmer ID => hash of trust details on IPFS
     mapping(string=>string) public presDetails; // serial no => hash of prescription details on IPFS
 
+
     event eventCreatePrescription(
         string serialNo,
         string farmerID,
