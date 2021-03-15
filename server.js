@@ -5,7 +5,7 @@
     var web3 = new Web3(web3Provider);
 
 
-    var contractAddress ='0xFdf373736683Ba903F1428CD750bCC3f4B7f6FFe';
+    var contractAddress ='0xD824Ee9f801Fe5fBF033363863C3A6A0e1933858';
     var contractABI;
 
     //read abi from rest call
